@@ -1,15 +1,29 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
+export PATH="$HOME/android-studio/bin/:$PATH"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
+bindkey -v
+# Remap movement keys in Vi command mode
+# 'm' maps to vi-backward-char (was 'h')
+bindkey -M vicmd 'm' vi-backward-char
+# 'n' maps to vi-down-line-or-history (was 'j')
+bindkey -M vicmd 'n' vi-down-line-or-history
+# 'e' maps to vi-up-line-or-history (was 'k')
+bindkey -M vicmd 'e' vi-up-line-or-history
+# 'i' maps to vi-forward-char (was 'l')
+bindkey -M vicmd 'i' vi-forward-char
 
+# Unassign the original 'hjkl' keys
+bindkey -M vicmd -r 'h'
+bindkey -M vicmd -r 'j'
+bindkey -M vicmd -r 'k'
+bindkey -M vicmd -r 'l'
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -107,3 +121,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+bindkey -v
