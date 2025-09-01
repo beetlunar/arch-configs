@@ -115,6 +115,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias vi="/usr/sbin/nvim"
+alias shcon="nvim /home/beet/.zshrc"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
