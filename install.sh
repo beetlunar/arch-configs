@@ -1,10 +1,11 @@
 #!/bin/bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo pacman -S nvim
 sudo pacman -S flatpak
 sudo pacman -S ghostty
 flatpak install flathub app.zen_browser.zen
 flatpak run app.zen_browser.zen
-
+git clone https://github.com/beetlunar/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 # Define the source and destination paths
 source_rc_file="$(pwd)/.zshrc"
