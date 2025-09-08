@@ -1,4 +1,7 @@
 #!/bin/bash
+sudo pacman -S flatpak
+flatpak install flathub app.zen_browser.zen
+flatpak run app.zen_browser.zen
 
 # Define the source and destination paths
 source_rc_file="$(pwd)/.zshrc"
