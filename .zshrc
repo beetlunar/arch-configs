@@ -119,6 +119,7 @@ alias vi="/usr/sbin/nvim"
 alias shcon="nvim /home/beet/.zshrc"
 alias p3="/usr/sbin/python3"
 alias ws="cd ~/workspace/github.com/beetlunar"
+alias hypr="nvim /home/beet/.config/hypr/hyprland.conf"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
