@@ -15,6 +15,7 @@
     "modules-right": [
         "pulseaudio",
         "clock"
+//"custom/power"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -30,7 +31,7 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
+        "tooltip-format": "<tt>{calendar}</tt>",
         "format": "{:%H:%M  %d/%m/%Y}"
     },
     "pulseaudio": {
@@ -40,5 +41,17 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+	"tooltip": false,
+	"menu": "on-click",
+	"menu-file": "$HOME/.config/waybar/power_menu.xml",
+	"menu-actions": {
+	    "shutdown": "shutdown",
+	    "reboot": "reboot",
+	    "suspend": "systemctl suspend",
+	    "hibernate": "systemctl hibernate"
+	}
     }
 }
