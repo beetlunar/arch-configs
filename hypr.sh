@@ -1,11 +1,11 @@
 #!/bin/bash
 
 SOURCE_FILES=(
-    "hypr-config/hyprland.conf"
-    "hypr-config/hyprsunset.conf"
-    "hypr-config/hypridle.conf"
-    "hypr-config/hyprlock.conf"
-    "hypr-config/hyprpaper.conf"
+    "hyprland.conf"
+    "hyprsunset.conf"
+    "hypridle.conf"
+    "hyprlock.conf"
+    "hyprpaper.conf"
 )
 DEST_DIR="$HOME/.config/hypr"
 
