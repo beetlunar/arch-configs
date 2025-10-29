@@ -71,7 +71,10 @@ ZSH_THEME="agnoster"
 plugins=(git zsh-vi-mode)
 # Add this function to your .zshrc
 # It will be automatically picked up by the zsh-vi-mode plugin.
-
+function zvm_config() {
+  # This line enables system clipboard integration
+  ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+}
 function zvm_after_lazy_keybindings() {
   
   # === NORMAL MODE (vicmd) ===
