@@ -9,28 +9,11 @@ export PATH=$PATH:$HOME/go/bin
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
-bindkey -v
-# Remap movement keys in Vi command mode
-# 'm' maps to vi-backward-char (was 'h')
-bindkey -M vicmd 'm' vi-backward-char
-# 'n' maps to vi-down-line-or-history (was 'j')
-bindkey -M vicmd 'n' vi-down-line-or-history
-# 'e' maps to vi-up-line-or-history (was 'k')
-bindkey -M vicmd 'e' vi-up-line-or-history
-# 'i' maps to vi-forward-char (was 'l')
-bindkey -M vicmd 'i' vi-forward-char
-
-# Unassign the original 'hjkl' keys
-bindkey -M vicmd -r 'h'
-bindkey -M vicmd -r 'j'
-bindkey -M vicmd -r 'k'
-bindkey -M vicmd -r 'l'
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -85,8 +68,39 @@ bindkey -M vicmd -r 'l'
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-vi-mode)
+# Add this function to your .zshrc
+# It will be automatically picked up by the zsh-vi-mode plugin.
 
+function zvm_after_lazy_keybindings() {
+  
+  # === NORMAL MODE (vicmd) ===
+  
+  # 1. Map new navigation keys (mnei)
+  zvm_bindkey vicmd 'm' vi-backward-char  # 'h' (left) -> 'm'
+  zvm_bindkey vicmd 'n' vi-next-line      # 'j' (down) -> 'n'
+  zvm_bindkey vicmd 'e' vi-prev-line      # 'k' (up)   -> 'e'
+  zvm_bindkey vicmd 'i' vi-forward-char   # 'l' (right) -> 'i'
+
+  # 2. Re-map the original functions to old keys (lkj)
+  zvm_bindkey vicmd 'l' vi-insert         # 'i' (Insert) -> 'l'
+  zvm_bindkey vicmd 'k' vi-end-of-word    # 'e' (End of word) -> 'k'
+  zvm_bindkey vicmd 'j' vi-repeat-search  # 'n' (Next search) -> 'j'
+
+  
+  # === VISUAL MODE (visual) ===
+  
+  # 3. Map new navigation keys (mnei)
+  zvm_bindkey visual 'm' vi-backward-char  # 'h' (left) -> 'm'
+  zvm_bindkey visual 'n' vi-next-line      # 'j' (down) -> 'n'
+  zvm_bindkey visual 'e' vi-prev-line      # 'k' (up)   -> 'e'
+  zvm_bindkey visual 'i' vi-forward-char   # 'l' (right) -> 'i'
+
+  # 4. Re-map the original functions to old keys (lkj)
+  zvm_bindkey visual 'l' vi-insert         # 'i' (Exit visual, enter insert) -> 'l'
+  zvm_bindkey visual 'k' vi-end-of-word    # 'e' (End of word) -> 'k'
+  zvm_bindkey visual 'j' vi-repeat-search  # 'n' (Next search) -> 'j'
+}
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -127,7 +141,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-bindkey -v
 if [ -z "${DISPLAY}" ] && [ "$(tty)" = "/dev/tty1" ]; then
   exec Hyprland
 fi
