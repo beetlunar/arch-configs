@@ -12,5 +12,7 @@ fi
 # Create a symbolic link
 echo "Creating a symbolic link for .zshrc..."
 ln -s "$source_rc_file" "$destination_rc_file"
-
+git clone https://github.com/jeffreytse/zsh-vi-mode \
+  $ZSH_CUSTOM/plugins/zsh-vi-mode
 echo "Installation complete. Please restart your terminal or run 'source ~/.zshrc' to apply changes."
+
