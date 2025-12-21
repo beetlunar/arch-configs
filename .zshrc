@@ -95,8 +95,8 @@ function zvm_after_lazy_keybindings() {
   
   # 3. Map new navigation keys (mnei)
   zvm_bindkey visual 'm' vi-backward-char  # 'h' (left) -> 'm'
-  zvm_bindkey visual 'n' vi-next-line      # 'j' (down) -> 'n'
-  zvm_bindkey visual 'e' vi-prev-line      # 'k' (up)   -> 'e'
+  zvm_bindkey vicmd 'n' down-line-or-beginning-search      # 'j' (down) -> 'n'
+  zvm_bindkey vicmd 'e' up-line-or-beginning-search      # 'k' (up)   -> 'e'
   zvm_bindkey visual 'i' vi-forward-char   # 'l' (right) -> 'i'
 
   # 4. Re-map the original functions to old keys (lkj)
