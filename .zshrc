@@ -145,5 +145,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 if [ -z "${DISPLAY}" ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec Hyprland
+  exec start-hyprland
 fi
