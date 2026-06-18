@@ -5,7 +5,6 @@ SOURCE_FILES=(
     "hyprsunset.conf"
     "hypridle.conf"
     "hyprlock.conf"
-    "hyprpaper.conf"
 )
 DEST_DIR="$HOME/.config/hypr"
 
