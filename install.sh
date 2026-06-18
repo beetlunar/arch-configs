@@ -5,7 +5,13 @@ sudo pacman -S --needed --noconfirm ttf-jetbrains-mono-nerd xdg-desktop-portal-g
 git config --global user.email "beetlunar@pm.me"
 git config --global user.name "beetlunar"
 git clone https://github.com/beetlunar/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+git clone https://github.com/jeffreytse/zsh-vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-vi-mode
+./hypr.sh
+./shcon.sh
+./waybar.sh
+./wofi.sh
+sudo chsh -s $(which zsh) $(whoami)
 git clone https://aur.archlinux.org/zen-browser-bin.git
 cd "$HOME/zen-browser-bin" || exit
 makepkg -si --noconfirm --needed
