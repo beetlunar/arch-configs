@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SOURCE_FILES=(
-    "hyprland.conf"
+    "hyprland.lua"
     "hyprsunset.conf"
     "hypridle.conf"
     "hyprlock.conf"
