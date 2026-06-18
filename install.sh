@@ -9,3 +9,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ./shcon.sh
 ./hypr.sh
 ./wofi.sh	
+git clone https://aur.archlinux.org/zen-browser-bin.git
+cd "$HOME/zen-browser-bin" || exit
+makepkg -si --noconfirm --needed
+cd ~ && rm -rf "$HOME/zen-browser-bin"
