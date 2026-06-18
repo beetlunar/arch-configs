@@ -12,7 +12,3 @@ git clone https://github.com/jeffreytse/zsh-vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/c
 ./waybar.sh
 ./wofi.sh
 sudo chsh -s $(which zsh) $(whoami)
-git clone https://aur.archlinux.org/zen-browser-bin.git
-cd "$HOME/zen-browser-bin" || exit
-makepkg -si --noconfirm --needed
-cd ~ && rm -rf "$HOME/zen-browser-bin"
