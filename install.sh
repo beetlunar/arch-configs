@@ -6,9 +6,6 @@ git config --global user.email "beetlunar@pm.me"
 git config --global user.name "beetlunar"
 git clone https://github.com/beetlunar/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-./shcon.sh
-./hypr.sh
-./wofi.sh	
 git clone https://aur.archlinux.org/zen-browser-bin.git
 cd "$HOME/zen-browser-bin" || exit
 makepkg -si --noconfirm --needed
