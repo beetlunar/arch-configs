@@ -13,7 +13,7 @@ hl.monitor({
 
 local terminal = "ghostty"
 local fileManager = "ranger"
-local menu = "wofi"
+local menu = "wofi --show drun"
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd(terminal)
